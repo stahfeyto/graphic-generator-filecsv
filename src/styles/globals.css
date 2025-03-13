@@ -1,0 +1,169 @@
+/* Reset básico para evitar inconsistências entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #F0F7EE;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+  width: 95%;
+  background: rgba(255, 255, 255, 0.2); /* Efeito de glassmorphism */
+  backdrop-filter: blur(10px); /* Desfoque atrás da navbar */
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  border-radius: 20px;
+  animation: slideDown 0.5s ease-out;
+  transition: box-shadow 0.3s ease-in-out; /* Transição suave para a sombra */
+}
+
+@keyframes slideDown {
+  from {
+      transform: translate(-50%, -100%);
+  }
+  to {
+      transform: translate(-50%, 0);
+  }
+}
+
+/* Ajustes para a página de gráfico */
+.chart-container {
+  padding-top: 80px; /* Garantir que o conteúdo não sobreponha a navbar */
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Home */
+.home-container {
+  text-align: center;
+  padding: 100px 20px 50px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 80px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Upload container */
+.upload-container {
+  background: #D9EAD3;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.upload-container p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Input de upload com hover sutil */
+input[type="file"] {
+  padding: 12px;
+  border: 2px dashed #555;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s, background-color 0.3s ease-in-out;
+}
+
+input[type="file"]:hover {
+  border-color: #444;
+  background-color: #E3F2E1; /* Mudança de cor suave */
+}
+
+/* Botão interativo */
+button {
+  margin-top: 20px;
+  padding: 12px 18px;
+  border: none;
+  background-color: #2E7D32;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #1B5E20;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Efeito de sombra no hover */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Animação para fade-in nos componentes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicar animação nas seções */
+.section {
+  animation: fadeInUp 1s ease-out forwards;
+}
