@@ -27,8 +27,8 @@ const ChartPage = () => {
       }}
     >
       <Navbar />
-      <h2>...</h2>
-      <ResponsiveContainer width="95%" height={400}>
+    
+      <ResponsiveContainer width="95%" height={400} style={{ "marginTop":"10rem" }}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="x" />
